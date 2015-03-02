@@ -3,7 +3,7 @@ class profiles::rkhunter {
 
   include ::rkhunter
 
- if hiera('rkhunter::cron_propupd') {
+ if ::rkhunter::cron_propupd {
 
   cron { 'rkhunter propupd':
     command => 'rkhunter --propupd | logger -t RKHUNTER_PROPUPD',
@@ -14,8 +14,8 @@ class profiles::rkhunter {
 
   }
 
-  if hiera('rkhunter::cron_rpm') {
-  
+  if ::rkhunter::cron_rpm {
+
   cron { 'rkhunter pkgmgr RPM':
     command => 'rkhunter --propupd --pkgmgr RPM | logger -t RKHUNTER_RPM',
     user    => root,
@@ -25,8 +25,8 @@ class profiles::rkhunter {
 
   }
 
-  if hiera('rkhunter::cron_check') {
-  
+  if ::rkhunter::cron_check {
+
   cron { 'rkhunter check':
     command => 'rkhunter --check --sk | logger -t RKHUNTER_CHECK',
     user    => root,
