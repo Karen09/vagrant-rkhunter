@@ -10,7 +10,7 @@
 
 ##Documentation
 
-* **Documentation you can find [here](https://github.com/thbe/puppet-rkhunter/blob/master/README.md)** or [here](docs/README.md)
+* **Documentation you can find [here](https://github.com/thbe/puppet-rkhunter/blob/master/README.md) or [here](docs/README.md)**
 
 ##Try Rkhunter
 
@@ -25,3 +25,5 @@
 * **rkhunter --help**: for more info.
 * **tail -f /var/log/rkhunter/rkhunter.log**: log file
 * **vi /etc/rkhunter.conf**: config file Rkhunter
+
+* **Thanks [Thomas](https://github.com/thbe) for making awesome RootKit Hunter Puppet Module**
