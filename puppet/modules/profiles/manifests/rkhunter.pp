@@ -3,14 +3,6 @@ class profiles::rkhunter {
 
   include ::rkhunter
 
-  exec { "cron propupd":
-    path        => ["/usr/bin", "/usr/sbin"],
-    command     => 'rkhunter --propupd | logger -t RKHUNTER_PROPUPD',
-    subscribe   => Package["$rkhunter::params::packageCommon"],
-    refreshonly => true,
-  }
-
-
   if ::rkhunter::cron_check {
 
   cron { 'rkhunter check':
