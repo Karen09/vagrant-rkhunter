@@ -3,27 +3,13 @@ class profiles::rkhunter {
 
   include ::rkhunter
 
- if ::rkhunter::cron_propupd {
-
-  cron { 'rkhunter propupd':
-    command => 'rkhunter --propupd | logger -t RKHUNTER_PROPUPD',
-    user    => root,
-    hour    => '2',
-    minute  => '10',
+  exec { "cron propupd":
+    path        => ["/usr/bin", "/usr/sbin"],
+    command     => 'rkhunter --propupd | logger -t RKHUNTER_PROPUPD',
+    subscribe   => Package["$rkhunter::params::packageCommon"],
+    refreshonly => true,
   }
 
-  }
-
-  if ::rkhunter::cron_rpm {
-
-  cron { 'rkhunter pkgmgr RPM':
-    command => 'rkhunter --propupd --pkgmgr RPM | logger -t RKHUNTER_RPM',
-    user    => root,
-    hour    => '2',
-    minute  => '15',
-  }
-
-  }
 
   if ::rkhunter::cron_check {
 

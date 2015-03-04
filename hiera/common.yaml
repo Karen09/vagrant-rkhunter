@@ -6,6 +6,4 @@ rkhunter::rootEmail: localhost
 rkhunter::remoteSyslog: true
 
 #Rkhunter Cron job 
-rkhunter::cron_propupd: true
-rkhunter::cron_rpm: true
 rkhunter::cron_check: true
