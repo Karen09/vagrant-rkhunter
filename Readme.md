@@ -27,3 +27,7 @@
 * **vi /etc/rkhunter.conf**: config file Rkhunter
 
 * **Thanks [Thomas](https://github.com/thbe) for making awesome RootKit Hunter Puppet Module**
+
+##thbe/yum module
+* **reason of usage thbe/yum to get epel repo in vagrant box**
+* **if you have EPEL already activated, the yum module is not necessary**
